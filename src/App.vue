@@ -1,22 +1,34 @@
-
-
 <template>
-   <h2 v-rainbow:column="'mycus'">Hello world</h2>
-   
- 
+  <div>
+    <h2>Filtered IDs</h2>
+    <div v-for="data in someSampleArray" :key="data.id">
+      <h1>{{ toSomeFilter(data.id) }}</h1>
+    </div>
+  </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      someSampleArray: [
+        { id: 1, name: "Apple" },
+        { id: 2, name: "Banana" },
+        { id: 3, name: "Cherry" }
+      ]
+    };
+  },
+  methods: {
+    toSomeFilter(value) {
+      return value === 1 ? "ID is One ✅" : "Other ID ❌";
+    }
+  }
+};
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+h1 {
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 </style>
