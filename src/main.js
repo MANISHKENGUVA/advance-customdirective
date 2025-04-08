@@ -14,6 +14,11 @@ app.directive('rainbow', {
     else{
         el.style.color = "blue";
     }
+
+    if(binding.arg=='column'){
+      
+        alert("kenguva")
+    }
   
   }
 });

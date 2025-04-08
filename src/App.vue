@@ -1,7 +1,7 @@
 
 
 <template>
-   <h2 v-rainbow>Hello world</h2>
+   <h2 v-rainbow:column="'mycus'">Hello world</h2>
    
  
 </template>
